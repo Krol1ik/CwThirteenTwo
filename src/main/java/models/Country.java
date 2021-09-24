@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
+@Table (name = "Country")
 public class Country {
 
     @Id
@@ -15,7 +15,7 @@ public class Country {
     @Column(name = "Country_name")
     private String countryName;
 
-    @OneToMany(mappedBy = "country", orphanRemoval = true)
+    @OneToMany (mappedBy = "country", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<City> cityList;
 
 
